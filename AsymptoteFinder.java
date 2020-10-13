@@ -33,7 +33,7 @@ public class AsymptoteFinder {
                 case 9: System.out.println("The asymptote is nonic.");
                         break;
                 case 10: System.out.println("The asymptote is decic.");
-            }
+        }
         s.close();
         }
     }
