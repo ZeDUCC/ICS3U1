@@ -14,6 +14,6 @@ public class BooleanTest {
         boolean d = s.nextBoolean();
         boolean endgate = ((a && b) || (c && d)) || ((c && a) || (a && d)) || ((c && a) || (a && d)) || ((d && b) || (b && c));
         System.out.println("The result is: " + endgate);
-        s.close(); //this is a comment
+        s.close();
     }
 }
