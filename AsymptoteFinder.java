@@ -34,7 +34,7 @@ public class AsymptoteFinder {
                         break;
                 case 10: System.out.println("The asymptote is decic.");
         }
-        s.close();
+        s.close(); //comment
         }
     }
 }
