@@ -2,11 +2,10 @@ import java.util.Scanner;
 public class PiApproximation {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-
+        System.out.println("Welcome to the Pi Approximation program. This program will\napproximate the value of pi given an integer n.\n");
         loop:
-        
+
         while (true) {
-            System.out.println("Welcome to the Pi Approximation program. This program will\napproximate the value of pi given an integer n.\n");
             System.out.println("Enter a value.");
             int n = s.nextInt();
             double sum = 0;
