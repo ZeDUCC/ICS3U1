@@ -10,7 +10,7 @@ public class PiApproximation {
             int n = s.nextInt();
             double sum = 0;
             for (int i = 0; i < n; i++) {
-                double piValue = (Math.pow(-1, i)) / (2*i + 1);
+                double piValue = Math.pow(-1, i) / (2*i + 1);
                 sum += piValue;
             }
             System.out.println("The value of pi is " + 4 * sum);
