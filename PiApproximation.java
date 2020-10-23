@@ -1,5 +1,6 @@
 //3.75 out of 4
 import java.util.Scanner;
+
 public class PiApproximation {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
@@ -15,7 +16,7 @@ public class PiApproximation {
             }
             double sum = 0;
             for (int i = 0; i < n; i++) {
-                double piValue = Math.pow(-1, i) / (2*i + 1);
+                double piValue = Math.pow(-1, i) / (2 * i + 1);
                 sum += piValue;
             }
             System.out.println("The value of pi is " + 4 * sum);

@@ -1,5 +1,6 @@
 //3.75 out of 4
 import java.util.Scanner;
+
 public class AsymptoteFinder {
 
     public static void main(final String[] args) {
