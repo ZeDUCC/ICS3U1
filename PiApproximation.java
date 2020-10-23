@@ -6,8 +6,12 @@ public class PiApproximation {
         loop:
 
         while (true) {
-            System.out.println("Enter a value.");
+            System.out.println("Enter a positive integer.");
             int n = s.nextInt();
+            if (n < 0) {
+                System.out.println("You've entered a negative number.");
+                continue;
+            }
             double sum = 0;
             for (int i = 0; i < n; i++) {
                 double piValue = Math.pow(-1, i) / (2*i + 1);
