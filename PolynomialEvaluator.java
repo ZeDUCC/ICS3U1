@@ -9,7 +9,7 @@ public class PolynomialEvaluator {
         System.out.println("Now, enter the value of x.");
         double x = s.nextDouble();
         double sum = 0;
-        for (String term : terms) {
+        for (String term : terms) { 
             if (term.contains("x") && term.contains("^")) {
                 double coefficient = Double.parseDouble(term.substring(0, term.indexOf("x")));
                 int exponent = Integer.parseInt(term.substring(term.indexOf("^") + 1));
