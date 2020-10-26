@@ -26,4 +26,3 @@ public class PolynomialEvaluator {
         s.close();
     }
 }
-
