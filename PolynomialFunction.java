@@ -20,5 +20,6 @@ public class PolynomialFunction {
             }
             System.out.println(function);
         }
+        s.close();
     }
 }
