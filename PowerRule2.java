@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PowerRule {
+public class PowerRule2 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String derivative1 = "";
@@ -12,9 +12,9 @@ public class PowerRule {
         if (exponents.length != coefficients.length) {
             System.out.println("The number of terms and exponents don't match. Please run the program again.");
         } else {
-            for (int i = 0; i < coefficients.length; i++) {
-                double coValue = Double.parseDouble(coefficients[i]);
-                int expValue = Integer.parseInt(exponents[i]);
+            for (String coefficient : coefficients) {
+                double coValue = Double.parseDouble(coefficient);
+                int expValue = Integer.parseInt(coefficient);
                 if (coValue >= 0) {
                     derivative1 += "+";
                 } else {
@@ -34,6 +34,15 @@ public class PowerRule {
             }
             String[] d2Terms = derivative1.split(" ");
             /*for (String term : d2Terms) {
+                double coValue = Double.parseDouble(term.substring(0, term.indexOf("x")));
+                int expValue = Integer.parseInt(term.substring(term.indexOf("^")));
+                if (coValue > 0) {
+                    derivative2 += "+" + (coValue * expValue) + "x^" + (expValue - 1) + " "; 
+                } else {
+                    derivative2 += "-" + (coValue * expValue) + "x^" + (expValue - 1) + " ";
+                }
+            }
+            for (String term : d2Terms) {
                 double coValue = Double.parseDouble(term.substring(0, term.indexOf("x")));
                 int expValue = Integer.parseInt(term.substring(term.indexOf("^")));
                 if (coValue >= 0) {

@@ -26,7 +26,7 @@ public class PolynomialFunction {
         for (int i = 0; i < exponents.length; i++) {
             answer += Double.parseDouble(coefficients[i]) * (Math.pow(x, Double.parseDouble(exponents[i])));
         }
-        System.out.println("Your function at x = " + x + " is " + answer);
+        System.out.println("Your function at x = " + x + " is: f(" + x + ") = " + answer);
         s.close();
     }
 }

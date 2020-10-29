@@ -9,10 +9,11 @@ public class PolynomialEvaluator {
         System.out.println("Now, enter the value of x.");
         double x = s.nextDouble();
         double sum = 0;
-        loop:
         for (String term : terms) { 
-            if (term.contains("f") || term.contains("=")) {
-                continue loop;
+            if (term.contains("=") || term.contains("f")) {
+                double coefficient = Double.parseDouble(term.substring(term.indexOf("=") + 1, term.indexOf("x^")));
+                int exponent = Integer.parseInt(term.substring(term.indexOf("x")));
+                sum += Math.pow(x, exponent) * coefficient;
             }
             if (term.contains("x") && term.contains("^")) {
                 double coefficient = Double.parseDouble(term.substring(0, term.indexOf("x")));
