@@ -18,7 +18,7 @@ public class PowerRule {
                 if (coValue >= 0) {
                     derivative1 += "+";
                 } else {
-                    derivative1 += "-";
+                    derivative1 += "";
                 }
                 if (expValue - 1 == 1 && coValue == 1) {
                     derivative1 += "+ x ";
@@ -32,14 +32,16 @@ public class PowerRule {
                     derivative1 += (coValue * expValue) + "x^" + (expValue - 1) + " ";
                 }
             }
-            String[] d2Terms = derivative1.split(" ");
-            /*for (String term : d2Terms) {
-                double coValue = Double.parseDouble(term.substring(0, term.indexOf("x")));
-                int expValue = Integer.parseInt(term.substring(term.indexOf("^")));
-                if (coValue >= 0) {
+            loop:
+            for (int i = 0; i < coefficients.length; i++) {
+                double coValue = Double.parseDouble(coefficients[i]) * Integer.parseInt(exponents[i]);
+                int expValue = Integer.parseInt(exponents[i]) - 1;
+                if (coValue > 0) {
                     derivative2 += "+";
+                } else if (coValue < 0){
+                    derivative2 += "";
                 } else {
-                    derivative2 += "-";
+                    derivative2 += "";
                 }
                 if (expValue - 1 == 1 && coValue == 1) {
                     derivative2 += "+ x ";
@@ -47,15 +49,16 @@ public class PowerRule {
                     derivative2 += coValue;
                 } else if (expValue - 1 == 1) {
                     derivative2 += coValue * expValue + "x ";
-                } else if (coValue == 1 && expValue - 1 != 0) {
-                    derivative2 += "x^" + (expValue - 1);
+                } else if (coValue == 1 && expValue - 1 < 0) {
+                    derivative2 += "";
+                } else if (expValue < 0) {
+                    continue loop;
                 } else {
                     derivative2 += (coValue * expValue) + "x^" + (expValue - 1) + " ";
                 }
             }
-        }*/
-        System.out.println("The first derivative is " + derivative1.substring(1));
-        //System.out.println("The second derivative is " + derivative2.substring(1));
+        System.out.println("The first derivative is: f'(x) = " + derivative1.substring(1));
+        System.out.println("The second derivative is: f''(x) = " + derivative2.substring(1, derivative2.length() - 1));
     }
-}
+    }
 }
