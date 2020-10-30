@@ -45,6 +45,8 @@ public class PowerRule {
                 }
                 if (expValue - 1 == 1 && coValue == 1) {
                     derivative2 += "+ x ";
+                } else if (coValue == 0.0 || expValue  - 1 < 0) {
+                    derivative2 += "";
                 } else if (expValue - 1 == 0) {
                     derivative2 += coValue;
                 } else if (expValue - 1 == 1) {
