@@ -5,7 +5,7 @@ public class PolynomialEvaluator {
     
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.println("Enter the function, f(x), that you would like to use.");
+        System.out.println("Enter the function that you would like to use.");
         StringTokenizer terms = new StringTokenizer(s.nextLine(), " ");
         System.out.println("Now, enter the value of x.");
         double x = s.nextDouble();
