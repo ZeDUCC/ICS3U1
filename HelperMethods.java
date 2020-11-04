@@ -56,8 +56,27 @@ public class HelperMethods {
     }
     
     public static void main(String[] args) {
-        quadraticFormula(1, 4, 4);
-        asymptoteFinder(4, 2);
-        System.out.println("The value of pi is: " + piApproximation(10));
+        Scanner s = new Scanner(System.in);
+        System.out.println("Welcome to the HelperMethods program.");
+        System.out.println("Enter 1 for quadraticFormula, 2 for asymptoteFinder, or 3 for piApproximation.");
+        if (s.nextInt() == 1) {
+            System.out.println("Enter your a-value: ");
+            double a = s.nextDouble();
+            System.out.println("Enter your b-value: ");
+            double b = s.nextDouble();
+            System.out.println("Enter your c-value: ");
+            double c = s.nextInt();
+            quadraticFormula(a, b, c);
+        } else if (s.nextInt() == 2) {
+            System.out.println("Enter the numerator's degree: ");
+            int m = s.nextInt();
+            System.out.println("Enter the denominator's degree: ");
+            int n = s.nextInt();
+            asymptoteFinder(m, n);
+        } else if (s.nextInt() == 3) {
+            System.out.println("Enter a positive integer: ");
+            int n = s.nextInt();
+            System.out.println("The value of pi is: " + piApproximation(n));
+        }
     }
 }
