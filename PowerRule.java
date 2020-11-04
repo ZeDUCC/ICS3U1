@@ -61,6 +61,7 @@ public class PowerRule {
             }
         System.out.println("The first derivative is: f'(x) = " + derivative1.substring(1));
         System.out.println("The second derivative is: f''(x) = " + derivative2.substring(1, derivative2.length() - 1));
+        s.close();
     }
     }
 }
