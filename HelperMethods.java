@@ -78,5 +78,6 @@ public class HelperMethods {
             int n = s.nextInt();
             System.out.println("The value of pi is: " + piApproximation(n));
         }
+        s.close();
     }
 }
