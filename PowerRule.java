@@ -23,7 +23,7 @@ public class PowerRule {
                 if (expValue - 1 == 1 && coValue == 1) {
                     derivative1 += "+ x ";
                 } else if (expValue - 1 == 0) {
-                    derivative1 += coValue;
+                    derivative1 += coValue + " ";
                 } else if (expValue - 1 == 1) {
                     derivative1 += coValue * expValue + "x ";
                 } else if (coValue == 1 && expValue - 1 != 0) {
@@ -36,7 +36,7 @@ public class PowerRule {
             for (int i = 0; i < coefficients.length; i++) {
                 double coValue = Double.parseDouble(coefficients[i]) * Integer.parseInt(exponents[i]);
                 int expValue = Integer.parseInt(exponents[i]) - 1;
-                if (coValue > 0) {
+                if (coValue > 0 && i != 0) {
                     derivative2 += "+";
                 } else if (coValue < 0){
                     derivative2 += "";
@@ -48,7 +48,7 @@ public class PowerRule {
                 } else if (coValue == 0.0 || expValue  - 1 < 0) {
                     derivative2 += "";
                 } else if (expValue - 1 == 0) {
-                    derivative2 += coValue;
+                    derivative2 += coValue + " ";
                 } else if (expValue - 1 == 1) {
                     derivative2 += coValue * expValue + "x ";
                 } else if (coValue == 1 && expValue - 1 < 0) {
