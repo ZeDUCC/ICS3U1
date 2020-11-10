@@ -36,7 +36,7 @@ public class PowerRule {
             for (int i = 0; i < coefficients.length; i++) {
                 double coValue = Double.parseDouble(coefficients[i]) * Integer.parseInt(exponents[i]);
                 int expValue = Integer.parseInt(exponents[i]) - 1;
-                if (coValue > 0 && i != 0) {
+                if (coValue > 0) {
                     derivative2 += "+";
                 } else if (coValue < 0){
                     derivative2 += "";
