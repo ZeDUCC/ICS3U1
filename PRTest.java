@@ -36,7 +36,7 @@ public class PRTest {
                 } else {
                     double coValue = Double.parseDouble(coefficients[i - coefficients.length]) * Integer.parseInt(exponents[i - coefficients.length]);
                     int expValue = Integer.parseInt(exponents[i - coefficients.length]) - 1;
-                    if (coValue > 0 && i - coefficients.length != 0) {
+                    if (coValue > 0 && i - coefficients.length != 1) {
                         derivative2 += "+";
                     } else if (coValue < 0){
                         derivative2 += "";
