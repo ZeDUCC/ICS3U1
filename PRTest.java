@@ -17,7 +17,7 @@ public class PRTest {
                 if (i < coefficients.length) {
                     double coValue = Double.parseDouble(coefficients[i]);
                     int expValue = Integer.parseInt(exponents[i]);
-                    if (coValue >= 0) {
+                    if (coValue >= 0 && i != 0) {
                         derivative1 += "+";
                     } else {
                         derivative1 += "";
@@ -36,7 +36,7 @@ public class PRTest {
                 } else {
                     double coValue = Double.parseDouble(coefficients[i - coefficients.length]) * Integer.parseInt(exponents[i - coefficients.length]);
                     int expValue = Integer.parseInt(exponents[i - coefficients.length]) - 1;
-                    if (coValue > 0) {
+                    if (coValue > 0 && i - coefficients.length != 0) {
                         derivative2 += "+";
                     } else if (coValue < 0){
                         derivative2 += "";
@@ -61,8 +61,8 @@ public class PRTest {
                 }
             }
         }
-    System.out.println("The first derivative is: f'(x) = " + derivative1.substring(1));
-    System.out.println("The second derivative is: f''(x) = " + derivative2.substring(1, derivative2.length() - 1));
+    System.out.println("The first derivative is: f'(x) = " + derivative1);
+    System.out.println("The second derivative is: f''(x) = " + derivative2);
     s.close();
     }
 }   
