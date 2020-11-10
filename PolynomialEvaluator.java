@@ -1,3 +1,5 @@
+//3.75/4
+
 import java.util.Scanner;
 import java.util.StringTokenizer;
 

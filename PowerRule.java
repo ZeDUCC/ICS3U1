@@ -1,6 +1,9 @@
+//3.5/4
+
 import java.util.Scanner;
 
 public class PowerRule {
+
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String derivative1 = "";

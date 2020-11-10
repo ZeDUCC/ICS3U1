@@ -14,7 +14,7 @@ public class TicTacToe {
             if (i % 2 == 0) {
                 System.out.println("Player one, your move. Which box would you like to take?");
                 String boxTaken = s.nextLine();
-                if (boxTaken.length() != 2) {
+                if (boxTaken.length() != 1) {
                     System.out.println("You didn't use the proper syntax. Try again.");
                     i -= 1;
                     continue;
