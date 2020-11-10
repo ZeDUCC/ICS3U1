@@ -12,56 +12,57 @@ public class PowerRule {
         if (exponents.length != coefficients.length) {
             System.out.println("The number of terms and exponents don't match. Please run the program again.");
         } else {
-            for (int i = 0; i < coefficients.length; i++) {
-                double coValue = Double.parseDouble(coefficients[i]);
-                int expValue = Integer.parseInt(exponents[i]);
-                if (coValue >= 0) {
-                    derivative1 += "+";
-                } else {
-                    derivative1 += "";
-                }
-                if (expValue - 1 == 1 && coValue == 1) {
-                    derivative1 += "+ x ";
-                } else if (expValue - 1 == 0) {
-                    derivative1 += coValue + " ";
-                } else if (expValue - 1 == 1) {
-                    derivative1 += coValue * expValue + "x ";
-                } else if (coValue == 1 && expValue - 1 != 0) {
-                    derivative1 += "x^" + (expValue - 1);
-                } else {
-                    derivative1 += (coValue * expValue) + "x^" + (expValue - 1) + " ";
-                }
-            }
             loop:
-            for (int i = 0; i < coefficients.length; i++) {
-                double coValue = Double.parseDouble(coefficients[i]) * Integer.parseInt(exponents[i]);
-                int expValue = Integer.parseInt(exponents[i]) - 1;
-                if (coValue > 0) {
-                    derivative2 += "+";
-                } else if (coValue < 0){
-                    derivative2 += "";
+            for (int i = 0; i < coefficients.length * 2 - 1; i++) {
+                if (i < coefficients.length) {
+                    double coValue = Double.parseDouble(coefficients[i]);
+                    int expValue = Integer.parseInt(exponents[i]);
+                    if (coValue >= 0 && i != 0) {
+                        derivative1 += "+";
+                    } else {
+                        derivative1 += "";
+                    }
+                    if (expValue - 1 == 1 && coValue == 1) {
+                        derivative1 += "+ x ";
+                    } else if (expValue - 1 == 0) {
+                        derivative1 += coValue + " ";
+                    } else if (expValue - 1 == 1) {
+                        derivative1 += coValue * expValue + "x ";
+                    } else if (coValue == 1 && expValue - 1 != 0) {
+                        derivative1 += "x^" + (expValue - 1);
+                    } else {
+                        derivative1 += (coValue * expValue) + "x^" + (expValue - 1) + " ";
+                    }
                 } else {
-                    derivative2 += "";
-                }
-                if (expValue - 1 == 1 && coValue == 1) {
-                    derivative2 += "+ x ";
-                } else if (coValue == 0.0 || expValue  - 1 < 0) {
-                    derivative2 += "";
-                } else if (expValue - 1 == 0) {
-                    derivative2 += coValue + " ";
-                } else if (expValue - 1 == 1) {
-                    derivative2 += coValue * expValue + "x ";
-                } else if (coValue == 1 && expValue - 1 < 0) {
-                    derivative2 += "";
-                } else if (expValue < 0) {
-                    continue loop;
-                } else {
-                    derivative2 += (coValue * expValue) + "x^" + (expValue - 1) + " ";
+                    double coValue = Double.parseDouble(coefficients[i - coefficients.length]) * Integer.parseInt(exponents[i - coefficients.length]);
+                    int expValue = Integer.parseInt(exponents[i - coefficients.length]) - 1;
+                    if (coValue > 0 && i - coefficients.length != 1) {
+                        derivative2 += "+";
+                    } else if (coValue < 0){
+                        derivative2 += "";
+                    } else {
+                        derivative2 += "";
+                    }
+                    if (expValue - 1 == 1 && coValue == 1) {
+                        derivative2 += "+ x ";
+                    } else if (coValue == 0.0 || expValue  - 1 < 0) {
+                        derivative2 += "";
+                    } else if (expValue - 1 == 0) {
+                        derivative2 += coValue + " ";
+                    } else if (expValue - 1 == 1) {
+                        derivative2 += coValue * expValue + "x ";
+                    } else if (coValue == 1 && expValue - 1 < 0) {
+                        derivative2 += "";
+                    } else if (expValue < 0) {
+                        continue loop;
+                    } else {
+                        derivative2 += (coValue * expValue) + "x^" + (expValue - 1) + " ";
+                    }
                 }
             }
-        System.out.println("The first derivative is: f'(x) = " + derivative1.substring(1));
-        System.out.println("The second derivative is: f''(x) = " + derivative2.substring(1, derivative2.length() - 1));
-        s.close();
+        }
+    System.out.println("The first derivative is: f'(x) = " + derivative1);
+    System.out.println("The second derivative is: f''(x) = " + derivative2);
+    s.close();
     }
-    }
-}
+}   
