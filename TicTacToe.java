@@ -10,44 +10,89 @@ public class TicTacToe {
         System.out.println("3. The first player to get 3 boxes in a vertical, horizontal, or diagonal line wins.\n");
         System.out.println("Good luck!\n");
         String table[][] = {{"1", "2", "3"}, {"4", "5", "6"}, {"7", "8", "9"}};
-        /*for (int i = 0; i < 9; i++) {
+        drawTable(table);
+        loop:
+        for (int i = 0; i < 9; i++) {
             if (i % 2 == 0) {
                 System.out.println("Player one, your move. Which box would you like to take?");
                 String boxTaken = s.nextLine();
                 if (boxTaken.length() != 1) {
                     System.out.println("You didn't use the proper syntax. Try again.");
-                    i -= 1;
+                    i--;
                     continue;
                 } else {
-                    if (boxTaken.substring(0, 1) == "A"){
-                        table[0][Integer.parseInt(boxTaken.substring(1)) - 1] = "X";
-                    } else if (boxTaken.substring(0, 1) == "B") {
-                        table[1][Integer.parseInt(boxTaken.substring(1)) - 1] = "X";
+                    int boxNum = Integer.parseInt(boxTaken);
+                    if ((boxNum > 0 && boxNum < 4) && (table[0][boxNum - 1] != "X" && table[0][boxNum - 1] != "O")) {
+                        table[0][boxNum - 1] = "X";
+                    } else if ((boxNum >= 4 && boxNum < 7) && (table[1][boxNum - 4] != "X" && table[1][boxNum - 4] != "O")) {
+                        table[1][boxNum - 4] = "X";
+                    } else if ((boxNum >= 7 && boxNum < 10) && (table[2][boxNum - 7] != "X" && table[2][boxNum - 7] != "O")) {
+                        table[2][boxNum - 7] = "X";
                     } else {
-                        table[2][Integer.parseInt(boxTaken.substring(1)) - 1] = "X";
+                        System.out.println("That box has been taken. Please try again.");
+                        i--;
+                        continue;
                     }
                 }
             } else {
                 System.out.println("Player two, your move. Which box would you like to take?");
                 String boxTaken = s.nextLine();
-                if (boxTaken.length() != 2) {
+                if (boxTaken.length() != 1) {
                     System.out.println("You didn't use the proper syntax. Try again.");
-                    i -= 1;
+                    i--;
                     continue;
                 } else {
-                    if (boxTaken.substring(0, 1) == "A"){
-                        table[0][Integer.parseInt(boxTaken.substring(1)) - 1] = "O";
-                    } else if (boxTaken.substring(0, 1) == "B") {
-                        table[1][Integer.parseInt(boxTaken.substring(1)) - 1] = "O";
+                    int boxNum = Integer.parseInt(boxTaken);
+                    if ((boxNum > 0 && boxNum < 4) && (table[0][boxNum - 1] != "X" && table[0][boxNum - 1] != "O")) {
+                        table[0][boxNum - 1] = "O";
+                    } else if ((boxNum >= 4 && boxNum < 7) && (table[1][boxNum - 4] != "X" && table[1][boxNum - 4] != "O")) {
+                        table[1][boxNum - 4] = "O";
+                    } else if ((boxNum >= 7 && boxNum < 10) && (table[2][boxNum - 7] != "X" && table[2][boxNum - 7] != "O")) {
+                        table[2][boxNum - 7] = "O";
                     } else {
-                        table[2][Integer.parseInt(boxTaken.substring(1)) - 1] = "O";
+                        System.out.println("That box has been taken. Please try again.");
+                        i--;
+                        continue;
                     }
                 }
             }
+            drawTable(table);
+            if (i >= 4) {
+                for (int j = 0; j < 9; j++) {
+                    if ((j >= 0 && j < 3) && (table[0][j].equals(table[1][j]) && table[0][j].equals(table[2][j]))) { //straight line from top down
+                        System.out.println("There is a winner! Congratulations!");
+                        drawTable(table);
+                        break loop;
+                    } else if (table[0][0].equals(table[1][1]) && table[1][1].equals(table[2][2])) { //top left to bottom right
+                        System.out.println("There is a winner! Congratulations!");
+                        drawTable(table);
+                        break loop;
+                    } else if (table[2][0].equals(table[1][1]) && table[0][2].equals(table[2][j])) { //bottom left to top right
+                        System.out.println("There is a winner! Congratulations!");
+                        drawTable(table);
+                        break loop;
+                    } else if (table[2][0].equals(table[2][1]) && table[2][2].equals(table[2][0])) { //bottom row left to right
+                        System.out.println("There is a winner! Congratulations!");
+                        drawTable(table);
+                        break loop;
+                    } else if (table[0][0].equals(table[0][1]) && table[0][0].equals(table[0][2])) { //top row left to right
+                        System.out.println("There is a winner! Congratulations!");
+                        drawTable(table);
+                        break loop;
+                    } else if (table[1][0].equals(table[1][1]) && table[1][0].equals(table[1][2])) { //middle row left to right
+                        System.out.println("There is a winner! Congratulations!");
+                        drawTable(table);
+                        break loop;
+                    } else {
+                        continue;
+                    }
+                }
+            } else {
+                continue;
+            }
         }
-    }*/
-    drawTable(table);
-}
+    }
+
     public static void drawTable(String[][] table) {
         System.out.println("--------------");
         System.out.println(table[0][0] +"  |  " + table[0][1] + "  |  " + table[0][2]);
@@ -58,4 +103,3 @@ public class TicTacToe {
         System.out.println("--------------");
     }
 }
-
