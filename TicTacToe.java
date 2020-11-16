@@ -11,6 +11,7 @@
             System.out.println("3. The first player to get 3 boxes in a vertical, horizontal, or diagonal line wins.\n");
             System.out.println("4. The first player uses X, and the second player uses O.\n");
             System.out.println("5. When making a move, you must enter an integer between 1 and 9.\n");
+            System.out.println("Scroll up to see the rest of the rules.\n");
             System.out.println("Good luck!\n");
             String table[][] = {{"1", "2", "3"}, {"4", "5", "6"}, {"7", "8", "9"}};
             drawTable(table);
