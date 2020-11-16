@@ -74,7 +74,7 @@
                         }
                     }
                 }
-            }
+            } 
         }
 
         public static void drawTable(String[][] table) {
