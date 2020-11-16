@@ -23,6 +23,7 @@
                     System.out.println("Player two, your move. Which box would you like to take?");
                     inputVal = "O";
                 }
+                try {
                 String boxTaken = s.nextLine();
                 if (boxTaken.length() != 1) {
                     System.out.println("You didn't use the proper syntax. Try again.");
@@ -41,6 +42,11 @@
                         i--;
                         continue;
                     }
+                }
+                } catch (NumberFormatException e) {
+                    System.out.println("Please enter an integer between 1 and 9.\n");
+                    i--;
+                    continue;
                 }
                 drawTable(table);
                 if (i >= 4) {
