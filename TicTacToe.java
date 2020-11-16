@@ -9,6 +9,7 @@
             System.out.println("1. If a box has a number value, then you can put your symbol there, and if not, it's taken by the other player.\n");
             System.out.println("2. You can't go twice in a row.\n");
             System.out.println("3. The first player to get 3 boxes in a vertical, horizontal, or diagonal line wins.\n");
+            System.out.println("4. The first player uses X, and the second player uses O.\n");
             System.out.println("Good luck!\n");
             String table[][] = {{"1", "2", "3"}, {"4", "5", "6"}, {"7", "8", "9"}};
             drawTable(table);
