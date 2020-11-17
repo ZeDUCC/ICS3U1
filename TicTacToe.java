@@ -58,7 +58,7 @@
                 if (i >= 4) {
                     for (int j = 0; j < 9; j++) {
                         String winner = i % 2 == 0 ? "Player 1" : "Player 2";
-                        
+
                         if ((j >= 0 && j < 3) && (table[0][j].equals(table[1][j]) && table[0][j].equals(table[2][j]))) { //straight line from top down
                             System.out.println(winner + " has won!");
                             drawTable(table);
@@ -67,7 +67,7 @@
                             System.out.println(winner + " has won!");
                             drawTable(table);
                             break loop;
-                        } else if (table[2][0].equals(table[1][1]) && table[0][2].equals(table[2][j])) { //bottom left to top right
+                        } else if (table[2][0].equals(table[1][1]) && table[0][2].equals(table[2][0])) { //bottom left to top right
                             System.out.println(winner + " has won!");
                             drawTable(table);
                             break loop;
@@ -89,6 +89,7 @@
                     }
                 }
             } 
+            System.out.println("The game is over.");
         }
 
         public static void drawTable(String[][] table) {
