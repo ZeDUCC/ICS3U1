@@ -15,6 +15,7 @@
             System.out.println("Good luck!\n");
             String table[][] = {{"1", "2", "3"}, {"4", "5", "6"}, {"7", "8", "9"}};
             drawTable(table);
+
             loop:
             for (int i = 0; i < 9; i++) {
                 String inputVal = "";
@@ -25,6 +26,7 @@
                     System.out.println("Player two, your move. Which box would you like to take?");
                     inputVal = "O";
                 }
+
                 try {
                     String boxTaken = s.nextLine();
                     if (boxTaken.length() != 1) {
@@ -33,6 +35,7 @@
                         continue;
                     } else {
                         int boxNum = Integer.parseInt(boxTaken);
+
                         if ((boxNum > 0 && boxNum < 4) && (table[0][boxNum - 1] != "X" && table[0][boxNum - 1] != "O")) {
                             table[0][boxNum - 1] = inputVal;
                         } else if ((boxNum >= 4 && boxNum < 7) && (table[1][boxNum - 4] != "X" && table[1][boxNum - 4] != "O")) {
@@ -51,9 +54,11 @@
                     continue;
                 }
                 drawTable(table);
+
                 if (i >= 4) {
                     for (int j = 0; j < 9; j++) {
                         String winner = i % 2 == 0 ? "Player 1" : "Player 2";
+                        
                         if ((j >= 0 && j < 3) && (table[0][j].equals(table[1][j]) && table[0][j].equals(table[2][j]))) { //straight line from top down
                             System.out.println(winner + " has won!");
                             drawTable(table);
